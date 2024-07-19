@@ -3,7 +3,7 @@ public class Company {
     private String title;
     private int debit = 0;
     private int credit = 0;
-    TaxSystem taxSystem;
+    private TaxSystem taxSystem;
     int amount = 0;
 
     public Company(String title, TaxSystem taxSystem) {
@@ -22,11 +22,12 @@ public class Company {
             credit+=Math.abs(amount);
         }
     }
-    public void payTaxes() {
-        int tax = taxSystem.calcTaxFor(this.debit, this.credit);
+    public int payTaxes() {
+        int tax = taxSystem.calcTaxFor(debit, credit);
         this.debit = 0;
         this.credit = 0;
-        return tax;
         System.out.println("Компания " + title + " уплатила налог в размере " + amount + " руб.");
+        return tax;
+
     }
 }
