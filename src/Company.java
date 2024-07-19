@@ -26,7 +26,7 @@ public class Company {
         int tax = taxSystem.calcTaxFor(debit, credit);
         this.debit = 0;
         this.credit = 0;
-        System.out.println("Компания " + title + " уплатила налог в размере " + amount + " руб.");
+        System.out.println("Компания " + title + " уплатила налог в размере " + tax + " руб.");
         return tax;
 
     }
